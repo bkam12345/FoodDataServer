@@ -1,9 +1,9 @@
 from django import forms
-from .models import Food
+from .models import FoodItem
 
 class FoodForm(forms.ModelForm):
     class Meta:
-        model = Food
+        model = FoodItem
         fields = ['name', 'expiration_date']
         widgets = {
             'expiration_date': forms.DateInput(attrs={'type': 'date'}),

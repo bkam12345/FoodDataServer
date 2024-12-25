@@ -112,6 +112,8 @@ CELERY_BEAT_SCHEDULE = {
     },
 }
 
+LOGIN_URL = '/admin/login/?next=/'
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Taipei'

@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.timezone import now
 
-class Food(models.Model):
+class FoodItem(models.Model):
     name = models.CharField(max_length=100, verbose_name="食物名稱")
     expiration_date = models.DateField(verbose_name="到期時間")
     notified_expiring = models.BooleanField(default=False, verbose_name="已通知即將過期")
