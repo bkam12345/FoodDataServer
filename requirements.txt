@@ -8,3 +8,4 @@ celery[redis]
 django-redis
 django-celery-results
 django-celery-beat
+gunicorn
