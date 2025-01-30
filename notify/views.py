@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import FoodForm
-from .utils import send_line_notify
+from .utils import send_notify
+import asyncio
 
 @login_required
 def addNotify(request):
@@ -10,7 +11,7 @@ def addNotify(request):
         if form.is_valid():
             food = form.save()
             message = f"成功新增食物：{food.name}，到期日：{food.expiration_date}"
-            send_line_notify(message)
+            asyncio.run(send_notify(message))
             return redirect('addNotify')
     else:
         form = FoodForm()

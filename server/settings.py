@@ -9,7 +9,8 @@ load_dotenv()
 
 SECRET_KEY = os.environ['SECRET_KEY']
 
-LINE_NOTIFY_TOKEN = os.getenv('LINE_NOTIFY_TOKEN')
+TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
+TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 
 REDIS_URL = os.getenv('REDIS_URL')
 
@@ -66,7 +67,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'server.wsgi.application'
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -80,7 +81,6 @@ DATABASES = {
         }
     }
 }
-
 """
 DATABASES = {
     'default': {
@@ -88,7 +88,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-"""
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -124,6 +124,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

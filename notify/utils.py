@@ -1,13 +1,9 @@
-import requests
+import asyncio
+from telegram import Bot
 from django.conf import settings
 
-def send_line_notify(message):
-    line_notify_token = settings.LINE_NOTIFY_TOKEN
-    url="https://notify-api.line.me/api/notify"
-    headers={"Authorization": f"Bearer {line_notify_token}"}
-    data={"message": message}
-    response=requests.post(url, headers=headers, data=data)
-    if response.status_code==200:
-        print("Send Line Notify Success")
-    else:
-        print("Send Line Notify Error")
+async def send_notify(message):
+    bot_token = settings.TELEGRAM_BOT_TOKEN
+    chat_id = settings.TELEGRAM_CHAT_ID
+    bot = Bot(token=bot_token)
+    await bot.send_message(chat_id=chat_id, text=message)

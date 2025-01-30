@@ -1,7 +1,6 @@
 Django
 psycopg2-binary
 python-dotenv
-requests
 redis
 celery
 celery[redis]
@@ -9,3 +8,4 @@ django-redis
 django-celery-results
 django-celery-beat
 gunicorn
+python-telegram-bot

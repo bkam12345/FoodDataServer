@@ -1,4 +1,7 @@
-
 db.sqlite3
 .DS_Store
 .env
+mac.env
+/notify/__pycache__
+/server/__pycache__
+/staticfiles_build
