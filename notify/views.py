@@ -16,3 +16,14 @@ def addNotify(request):
     else:
         form = FoodForm()
     return render(request, 'addNotify.html', {'form': form})
+
+
+@login_required
+def customMessage(request):
+    message_sent = False
+    if request.method == 'POST':
+        message = request.POST.get("message", "").strip()
+        if message:
+            asyncio.run(send_notify(message))
+            message_sent = True
+    return render(request, 'customMessage.html', {"message_sent": message_sent})

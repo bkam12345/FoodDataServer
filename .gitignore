@@ -2,6 +2,6 @@ db.sqlite3
 .DS_Store
 .env
 mac.env
-/__pycache__
 /staticfiles_build
 /.idea
+__pycache__

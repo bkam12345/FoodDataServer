@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>傳送自訂訊息</title>
+</head>
+<body>
+    <h1>傳送自訂 Telegram 訊息</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label for="message">輸入訊息：</label>
+        <input type="text" id="message" name="message" required>
+        <button type="submit">送出</button>
+    </form>
+
+    {% if message_sent %}
+        <p style="color: green;">訊息已成功發送！</p>
+    {% endif %}
+</body>
+</html>
